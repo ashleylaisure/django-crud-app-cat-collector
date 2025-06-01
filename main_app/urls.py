@@ -3,8 +3,9 @@ from . import views # Import views to connect routes to view functions
 
 urlpatterns = [
     # we are going to define all app-level urls in this list
-    path('', views.home, name='home'),
+    path('', views.Home.as_view(), name='home'),
     path('about/', views.about, name='about'),
+    path('accounts/signup/', views.signup, name='signup'),
     path('cats/', views.cat_index, name="cat-index"),
     path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
     path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
